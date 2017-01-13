@@ -1,0 +1,27 @@
+package com.pooja.alertdialog;
+
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class MainActivity extends AppCompatActivity {
+Button alert_button_show;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        alert_button_show=(Button)findViewById(R.id.button_show_alert);
+        alert_button_show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MyDialog myDialog=new MyDialog();
+                myDialog.show(getFragmentManager(),"Mydialog");
+            }
+
+        });
+    }
+}
